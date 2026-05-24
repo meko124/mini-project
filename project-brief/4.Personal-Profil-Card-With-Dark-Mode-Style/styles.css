@@ -1,7 +1,5 @@
-* {
-	margin: 0;
-}
-section,div,figure,artcle {
+
+section,div,figure,article {
 	display: flex;
 	justify-content: center;
 	align-content: center;
