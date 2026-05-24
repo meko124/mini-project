@@ -1,0 +1,16 @@
+* {
+	margin: 0;
+}
+section,div,figure,artcle {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+div {
+	height: 250px;
+	width: 250px;
+	background-color: brown;
+}
+h3 {
+	color: purple;
+}
