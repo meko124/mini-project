@@ -1,28 +1,75 @@
-
+:root {
+	--bg-color: white;
+	--text-color: #111;
+}
+body.dark {
+	--bg-color: #111;
+	--text-color: white;
+}
 body {
+	background: var(--bg-color);
+	color: var(--text-color);
+	min-height: 100vh;
 	display: flex;
 	justify-content: center;
-	align-content: center;
+	align-items: center;
+	transition: background 0.3s ease;
+}
+.container {
+	width: 300px;
+	background-color: var(--bg-color);
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+	transition: background 0.3s ease;
 }
 .zero {
-	margin-top: -90px;
-	width: 150px;
-	height: 150px;
+	width: 100%;
+	height: 80px;
 	background-color: blueviolet;
-	border-radius: 10px;
+	border-radius: 10px 10px 0 0;
 }
 .left{
 	display: grid;
 	grid-template-columns: auto auto auto;
 }
 .first {
-	margin-top: -56px;
+	margin-top: -40px;
 	text-align: center;
-	width: 150px;
-	height: 50px;
+	width: 80px;
+	height: 80px;
 	background-color: white;
-	border-radius: 100px 100px 100px 100px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+	border: 3px solid white;
+}
+.first h1 {
+	color: blueviolet;
+	font-size: 1.5rem;
+	margin: 0;
+}
+.second, .left {
+	padding: 0 16px 16px;
 }
 h3 {
 	color: purple;
+}
+#toggle {
+	display: block;
+	margin: 12px auto;
+	padding: 8px 12px;
+	border: 2px solid blueviolet;
+	background: transparent;
+	color: blueviolet;
+	border-radius: 20px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+#toggle:hover {
+	background: blueviolet;
+	color: white;
 }
