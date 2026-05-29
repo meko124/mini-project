@@ -1,5 +1,5 @@
 body {
-	background-color: darkgray;
+	background: #181818;
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
@@ -14,12 +14,12 @@ body {
 	justify-content: center;
 }
 .ring-core {
-	width: 180px;
-	height: 180px;
+	width: 80px;
+	height: 80px;
 	border-radius: 50%;
 	background: rgba(99, 179, 237, 0.15);
-	animation: ringCore 3s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
-	
+	animation: ringCore 8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
 	@keyframes ringCore {
 		0% {
 			transform: scale(1);
@@ -31,16 +31,14 @@ body {
 			transform: scale(1);
 		}
 	}
-	
-}
 .ring-mid {
 	position: absolute;
 	width: 130px;
 	height: 130px;
 	border-radius: 50%;
 	background: rgba(99, 179, 237, 0.25);
-	animation: ringMid 2s  cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
-
+	animation: ringMid 8s  cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
 	@keyframes ringMid {
 		0% {
 			transform: scale(1);
@@ -52,16 +50,14 @@ body {
 			transform: scale(1);
 		}
 	}
-	
-}
 .ring-outer {
 	position: absolute;
-	width: 80px;
-	height: 80px;
+	width: 180px;
+	height: 180px;
 	border-radius: 50%;
 	background: #3a7bd5;
-	animation: ringOuter 1s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
-
+	animation: ringOuter 8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
 	@keyframes ringOuter {
 		0% {
 			transform: scale(1);
@@ -73,5 +69,3 @@ body {
 			transform: scale(1);
 		}
 	}
-	
-}
