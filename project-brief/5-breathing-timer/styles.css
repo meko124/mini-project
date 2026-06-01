@@ -1,9 +1,21 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
 body {
+	font-family: sans-serif;
 	background: #181818;
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
 }
 .round {
 	position: relative; /*parent*/
@@ -17,18 +29,15 @@ body {
 	width: 80px;
 	height: 80px;
 	border-radius: 50%;
-	background: rgba(99, 179, 237, 0.15);
+	background: rgba(99, 179, 237, 0.85);
 	animation: ringCore 8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 	@keyframes ringCore {
-		0% {
-			transform: scale(1);
-		}
+		0%,100% {
+			transform: scale(1)
+		} 
 		50% {
-			transform: scale(1.5);
-		}
-		100% {
-			transform: scale(1);
+			transform: scale(1.5)
 		}
 	}
 .ring-mid {
@@ -36,18 +45,15 @@ body {
 	width: 130px;
 	height: 130px;
 	border-radius: 50%;
-	background: rgba(99, 179, 237, 0.25);
+	background: rgba(99, 179, 237, 0.15);
 	animation: ringMid 8s  cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 	@keyframes ringMid {
-		0% {
-			transform: scale(1);
-		}
+		0%,100% {
+			transform: scale(1)
+		} 
 		50% {
-			transform: scale(1.5);
-		}
-		100% {
-			transform: scale(1);
+			transform: scale(1.5)
 		}
 	}
 .ring-outer {
@@ -55,17 +61,47 @@ body {
 	width: 180px;
 	height: 180px;
 	border-radius: 50%;
-	background: #3a7bd5;
+	background: rgba(99, 179, 237, 0.08);
 	animation: ringOuter 8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 	@keyframes ringOuter {
-		0% {
-			transform: scale(1);
-		}
+		0%,100% {
+			transform: scale(1)
+		} 
 		50% {
-			transform: scale(1.5);
-		}
-		100% {
-			transform: scale(1);
+			transform: scale(1.5)
 		}
 	}
+#label { 
+	color: #8b9bb4; 
+	font-size: 13px; 
+	letter-spacing: 0.12em; 
+	text-transform: uppercase; 
+	min-height: 20px; 
+	text-align: center;
+}
+#count { 
+	color: #e2e8f0; 
+	font-size: 32px; 
+	font-weight: 300;
+	min-height: 40px; 
+	text-align: center;
+}
+.button-row {
+	display: flex; 
+	gap: 12px; 
+}
+button { 
+	padding: 8px 24px; 
+	border-radius: 20px; 
+	border: 1px solid #3a7bd5; 
+	background: transparent; 
+	color: #7ec8e3; 
+	font-size: 13px; 
+	cursor: pointer; 
+	transition: all 0.2s; 
+}
+ button:hover { 
+ 	background: #3a7bd5; 
+ 	color: white; 
+ }
