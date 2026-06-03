@@ -1,0 +1,77 @@
+body {
+	background: #f5f0eb;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-content: start;
+	padding: 2rem;
+}
+.recipe {
+	display: grid;
+	grid-template-areas: 
+	"hero hero"
+	"info sidebar";
+	grid-template-columns: 1fr 280px;
+	max-width: 700px;
+	width: 100%;
+	background: white;
+	border-radius: 16px;
+	overflow: hidden;
+	box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+.hero {
+	grid-area: hero;
+	background: linear-gradient(135deg, #c8773a, #e8a87c);
+	padding: 2rem;
+	min-height: 180px;
+	display: flex;
+	align-items: flex-end;
+}
+.hero h1 {
+	color: white;
+	font-size: 24px;
+}
+.info {
+	grid-area: info;
+}
+.sidebar {
+	grid-area: sidebar;
+	background: #fdf8f4;
+	border-left: 1px solid #f0e8df;
+}
+.sidebar ul {
+	list-style: none;
+	padding: 0;
+}
+.sidebar li {
+	display: flex;
+	justify-content: space-between;
+	padding: 8px 0;
+	border-bottom: 1px solid #f0e8df;
+	font-size: 13px;
+	color: #555;
+}
+.jumlah {
+	color: #c8773a;
+	font-weight: 500px;
+}
+.info, .sidebar {
+	padding: 1.5rem;
+}
+@media (max-width: 600px) {
+	.recipe{ 
+		grid-template-areas: 
+		"hero"
+		"sidebar"
+		"info";
+		grid-template-columns: 1fr;
+	 }
+}
+@media print {
+	body {
+		background: white;
+	}
+	.hero {
+		background: none;
+	}
+}
