@@ -1,3 +1,8 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
 body {
 	background: #f5f0eb;
 	min-height: 100vh;
@@ -34,6 +39,23 @@ body {
 .info {
 	grid-area: info;
 }
+.meta-item {
+	display: flex;
+	gap: 16px;
+	margin-bottom: 1rem;
+	flex-wrap: wrap;
+}
+.meta-label {
+	font-size: 11px;
+	color: #aaa;
+	display: block;
+}
+.meta-value {
+	font-size: 14px;
+	font-weight: 600;
+	color: #333;
+	display: block;
+}
 .sidebar {
 	grid-area: sidebar;
 	background: #fdf8f4;
@@ -53,7 +75,7 @@ body {
 }
 .jumlah {
 	color: #c8773a;
-	font-weight: 500px;
+	font-weight: 500;
 }
 .info, .sidebar {
 	padding: 1.5rem;
