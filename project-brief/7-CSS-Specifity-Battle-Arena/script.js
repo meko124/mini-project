@@ -15,6 +15,24 @@ function parseSpecificity(selector) {
     return [a,b,c,d];
 }
 
+function compare(selectorA,selectorB) {
+    
+    for (let i = 0; i < 4; i++) {
+        if (selectorA[i] > selectorB[i]) {
+            return {
+                winner: 'A',
+                reason: `colom ${[i]}: ${selectorA[i]} vs ${selectorB[i]}`
+            };
+        }
+        if (selectorA[i] < selectorB[i]) {
+            return {
+                winner: 'B',
+                reason: `colom ${[i]}: ${selectorB[i]} vs ${selectorA[i]}`
+            };
+        }
+    }
+    return {winner: 'draw', reason: 'All colom similiar'};
+}
 // parseSpecificity('div');
 // parseSpecificity('.item');
 // parseSpecificity('#nav');
