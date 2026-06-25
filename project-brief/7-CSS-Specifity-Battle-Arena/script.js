@@ -1,7 +1,7 @@
 function parseSpecificity(selector) {
 
 	let s = selector.trim();
-	let a = 0 , b = 0 , c = 0;
+	let a = 0 , b = 0 , c = 0, d = 0;
 
 	s = s.replace(/::[\w-]+/g, () => {d++; return '';});
     s = s.replace(/#[\w-]+/g, () => {b++; return '';});
@@ -16,12 +16,13 @@ function parseSpecificity(selector) {
 }
 
 function compare(selectorA,selectorB) {
-    
+    const labels = ['inline','ID','class','elemen'];
+
     for (let i = 0; i < 4; i++) {
         if (selectorA[i] > selectorB[i]) {
             return {
                 winner: 'A',
-                reason: `colom ${[i]}: ${selectorA[i]} vs ${selectorB[i]}`
+                reason: `colom ${i}: ${selectorA[i]} vs ${selectorB[i]}`
             };
         }
         if (selectorA[i] < selectorB[i]) {
@@ -31,7 +32,7 @@ function compare(selectorA,selectorB) {
             };
         }
     }
-    return {winner: 'draw', reason: 'All colom similiar'};
+    return {winner: 'draw', reason: 'All colom similiar equels draw!'};
 }
 // parseSpecificity('div');
 // parseSpecificity('.item');
