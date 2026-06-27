@@ -22,13 +22,13 @@ function compare(selectorA,selectorB) {
         if (selectorA[i] > selectorB[i]) {
             return {
                 winner: 'A',
-                reason: `colom ${i}: ${selectorA[i]} vs ${selectorB[i]}`
+                reason: `${labels[i]}: ${selectorA[i]} vs ${selectorB[i]}`
             };
         }
         if (selectorA[i] < selectorB[i]) {
             return {
                 winner: 'B',
-                reason: `colom ${[i]}: ${selectorB[i]} vs ${selectorA[i]}`
+                reason: `${labels[i]}: ${selectorB[i]} vs ${selectorA[i]}`
             };
         }
     }

@@ -8,10 +8,30 @@
 </head>
 <body>
 	
-	<input type="text" id="selectorA" placeholder="Selector A, for example: #nav .item">
-	<input type="text" id="selectorB" placeholder="Selector B, for example: div.active">
-	<button id="btnBattle">BATTLE</button>
+	<h1>⚔️ CSS Specifity Battle Arena</h1>
+	<div id="arena">
+		<div class="fighter" id="fighterA">
+			<h2>Fighter A</h2>
+			<input type="text" id="selectorA" placeholder="Selector A, for example: #nav .item">
+			<div class="score" id="scoreA">-</div>
+			<div class="bar-wrap">
+				<div class="bar" id="barA"></div>
+			</div>
+		</div>
 
+		<div id="vs">VS</div>
+
+		<div class="fighter" id="fighterB">
+			<h2>Fighter B</h2>
+			<input type="text" id="selectorB" placeholder="Selector B, for example: div.active">
+			<div class="score" id="scoreB">-</div>
+			<div class="bar-wrap">
+				<div class="bar" id="barB"></div>
+			</div>
+		</div>
+	</div>
+
+	<button id="btnBattle">⚔️ BATTLE</button>
 	<div id="result"></div>
 	
 	<script src="script.js"></script>
