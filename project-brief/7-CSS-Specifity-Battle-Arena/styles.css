@@ -82,4 +82,24 @@ input {
 	font-size: 1.1rem;
 	font-weight: bold;
 	background: #fff4444;
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	letter-spacing: 2px;
+	transition: transform 0.1s, background 0.2s;
+}
+#btnBattle:hover {
+	background: #ff6666;
+	transform: scale(1.05);
+}
+#btnBattle:active {
+	transform: scale(0.97);
+}
+#result {
+	font-size: 1.2rem;
+	text-align: center;
+	color: gold;
+	min-height: 40px;
+	letter-spacing: 1px;
 }
