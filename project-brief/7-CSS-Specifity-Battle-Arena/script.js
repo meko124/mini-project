@@ -37,3 +37,17 @@ function compare(selectorA,selectorB) {
 // parseSpecificity('div');
 // parseSpecificity('.item');
 // parseSpecificity('#nav');
+document.getElementById('btnBattle').addEventListener('click',() => {
+
+    const inputA = document.getElementById('selectorA').value;
+    const inputB = document.getElementById('selectorB').value;
+
+    if (!inputA || inputB) {
+        document.getElementById('result').textContent = '⚠️ fill both selector!';
+        return;
+    }
+
+    const tupleA = parseSpecificity(inputA);
+    const tupleB = parseSpecificity(inputB);
+    const outcome = compare(tupleA, tupleB);
+})
