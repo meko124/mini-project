@@ -39,15 +39,50 @@ function compare(selectorA,selectorB) {
 // parseSpecificity('#nav');
 document.getElementById('btnBattle').addEventListener('click',() => {
 
+    //take an inputs
     const inputA = document.getElementById('selectorA').value;
     const inputB = document.getElementById('selectorB').value;
 
-    if (!inputA || inputB) {
-        document.getElementById('result').textContent = '⚠️ fill both selector!';
+    if (!inputA || !inputB) {
+        document.getElementById('result').textContent = '⚠️ fill both selectors!';
         return;
     }
 
+    //parse
     const tupleA = parseSpecificity(inputA);
     const tupleB = parseSpecificity(inputB);
+
+    //compare
     const outcome = compare(tupleA, tupleB);
-})
+
+    //render
+    document.getElementById('scoreA').textContent = `[${tupleA.join(', ')}]`;
+    document.getElementById('scoreB').textContent = `[${tupleB.join(', ')}]`;
+
+    //animation health bar
+    const totalA = tupleA.reduce((sum, n) => sum + n, 0);
+    const totalB = tupleB.reduce((sum, n) => sum + n, 0);
+    const total = totalA + totalB  || 1;
+
+    document.getElementById('barA').style.width = `${(totalA / total) * 100}%`;
+    document.getElementById('barB').style.width = `${(totalB / total) * 100}%`;
+
+    //highlight winning
+    const fighterA = document.getElementById('fighterA');
+    const fighterB = document.getElementById('fighterB');
+
+    fighterA.className = 'fighter';
+    fighterB.className = 'fighter';
+
+    if (outcome.winner == 'A') {
+        fighterA.classList.add('winner');
+        fighterB.classList.add('loser');
+    } else if (outcome.winner == 'B') {
+        fighterB.classList.add('winner');
+        fighterA.classList.add('loser');
+    }
+
+    //showing a result
+    const emoji = outcome.winner === 'draw' ? '🤝' : '🏆';
+    document.getElementById('result').textContent =`${emoji} ${outcome.reason}`; 
+});

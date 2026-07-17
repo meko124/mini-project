@@ -75,13 +75,13 @@ input {
 #vs {
 	font-size: 2rem;
 	font-weight: bold;
-	color: #fff4444;
+	color: #ff4444;
 }
 #btnBattle {
 	padding: 14px 40px;
 	font-size: 1.1rem;
 	font-weight: bold;
-	background: #fff4444;
+	background: #ff4444;
 	color: #fff;
 	border: none;
 	border-radius: 10px;
